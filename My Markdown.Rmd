@@ -1,0 +1,108 @@
+---
+title: "Intro Markdown"
+author: "Jaimie Omondi"
+date: "3/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+### Value assignment
+a <- 4
+b <- 5
+c=3
+d=7
+10 -> e
+9 ->f
+x <- a+b+c+d+e+f
+a+b+c+d+e+f->k
+z=a+b+c+d+e+f
+print(c(x,z,k))
+```
+### all the above methods are viable when assigning variables
+```{r}
+### Vectors - This is a tabular representation of data
+v <- TRUE
+print(class(v)) # This prints logical as the data type
+```
+```{r}
+v <- 25.7
+print(class(v)) # this prints numerical since it is a numerical data 
+# type all number forms in R are numerical except for integer which has its own type
+```
+```{r}
+v <- 25L
+print(class(v)) # this prints integer and this is how we denote integer in R
+```
+```{r}
+v <- 2+5i
+print(class(v)) # this print complex since it is a complex number
+```
+```{r}
+v <- charToRaw("HELLO")
+print(class(v)) # This prints raw since the string is converted to its raw literals
+print(v) # prints 48 45 4c 4f
+```
+```{r}
+### To create a vector we use the concatination/combine function
+a <- c(1:10)
+print(a) # Prints a single vector with one to ten or alternatively can be done as follows
+```
+```{r}
+a <- c(1,2,3,4,5,6,7,8,9,0)
+print(a)
+```
+
+```{r}
+### Lists
+## A list can contain vectors,functions or even other lists
+## To make a list you use the list function
+b <- list(c(1:10),sin,FALSE,list(c(20:100),TRUE))
+print(b)
+```
+
+```{r}
+### Matrix
+## this is a multi-dimensional data type used to display data in tabular form
+## Are created using the matrix() function
+a <- matrix(c(1:50),nrow = 10,ncol=5,byrow=TRUE)
+print(a)
+```
+
+```{r}
+### Factor
+## used to group object that are repeated in a concat function thus helping you understand
+## and identify the various levels within a dataset
+apple_colors <- c('green','green','red','green','yellow','green','red','green','yellow','red')
+apple_factor <- factor(apple_colors)
+print(apple_factor)
+print(nlevels(apple_factor))
+```
+
+```{r}
+### Data Frames
+## Are tabular data objects that contain different models of data eg first column can be 
+## numeric,second column can be logical and third column can be character
+## All column need to be populated hence if an area is not populated u insert the NA to 
+## indicate no value.
+## it is creates using the function data.frame()
+BMI <- data.frame(
+  gender <- c('Male','Male','Female'),
+  height <- c(152,171.5,165),
+  weight <- c(81,93,78),
+  age <- c(42,38,26)
+)
+print(BMI)
+
+```
+
